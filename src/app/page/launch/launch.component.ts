@@ -18,8 +18,8 @@ export class LaunchComponent {
   constructor(private route: ActivatedRoute, private titleService: Title) {}
 
   async ngOnInit() {
-    this.titleService.setTitle(`Lanzamiento - ${this.launchId}`);
     this.launchId = this.route.snapshot.paramMap.get('id') || '';
+    this.titleService.setTitle(`Lanzamiento - ${this.launchId}`);
 
     if (this.launchId === '') {
       console.error('ID es undefined o vacío');
