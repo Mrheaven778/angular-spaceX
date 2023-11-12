@@ -14,6 +14,5 @@ export class IndexComponent {
   launches!: any;
   async ngOnInit() {
     this.launches = await getLatestLaunches();
-
   }
 }
