@@ -1,0 +1,36 @@
+<a
+  [routerLink]="'/launch/' + id"
+  class="block bg-gray-800 border border-gray-700 shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105 hover:bg-gray-700 hover:border-gray-50 h-full"
+>
+  <picture class="flex justify-center p-4">
+    <img
+      class="h-48 object-cover object-center mb-5 rounded-lg"
+      [src]="img"
+      [alt]="id"
+    />
+  </picture>
+  <header class="p-4 flex-grow">
+    @if(success){
+    <span
+      class="text-xs font-semibold mr-2 px-2.5 py-0.5 rounded bg-green-200 text-green-900"
+      >Hecho</span
+    >
+    }@else{
+    <span
+      class="text-xs font-semibold mr-2 px-2.5 py-0.5 rounded bg-red-200 text-red-900"
+      >Por Hacer</span
+    >
+    }
+
+    <h2 class="my-2 text-2xl font-bold tracking-tight text-white">
+      Flight #{{ flightNumber }}
+    </h2>
+    <p class="text-gray-400 mb-4 font-light">
+      {{
+        details && details.length > 100
+          ? details.slice(0, 100) + " ..."
+          : details
+      }}
+    </p>
+  </header>
+</a>
